@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="shortcut icon" href="./assets/1000062771-removebg.png" type="image/x-icon">
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -32,37 +33,74 @@
         .roboto-slab-title {
             font-family: "Roboto Slab", serif;
         }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .active {
+            background-color: #ffd19f;
+            color: #ff036c;
+            font-size: 700;
+            border-radius: 6px;
+        }
+
+        .shadow-text {
+            text-shadow: 2px 2px 5px rgba(36, 32, 32, 0.952);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
-<body class="winky-sans px-4 bg-gradient-to-r from-[#dfd6d6] to-[#FED7AD]">
-    <header class="container mx-auto ">
+<body class="winky-sans bg-gradient-to-r from-[#FED7AD] to-[#dfd6d6]">
+
+    <header id="homes" class="container mx-auto px-4">
         <!-- Navbar -->
-        <div class="navbar ">
+        <div class="navbar fixed w-full top-0 left-0 border-b-2 border-pink-700 rounded-b-lg z-10 bg-rose-200">
             <div class="navbar-start">
 
-                <a class="roboto-slab-title font-bold text-2xl lg:text-3xl ">Sudipto Das</a>
+                <a class="roboto-slab-title animate-pulse font-bold text-3xl lg:text-4xl text-rose-600">Sudi<span
+                        class="text-[#f38d2d]">p</span>to Das</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal space-x-12 px-1">
-                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                        <a>Home</a>
+                    <li onclick="homeClick()" id="home"
+                        class="text-lg hover:bg-[#FED7AD] rounded-lg hover:text-pink-700 font-medium hover:font-semibold">
+                        <a href="#homes">Home</a>
                     </li>
-                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold"><a>About
-                            Me</a></li>
-                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                        <a>Skills</a>
+                    <li onclick="skillsClick()" id="skill"
+                        class="text-lg hover:bg-[#FED7AD] rounded-lg hover:text-pink-700 font-medium hover:font-semibold">
+                        <a href="#skills">Skills</a>
                     </li>
-                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                        <a>Blogs</a>
+                    <li onclick="myProjects()" id="myProject"
+                        class="text-lg hover:bg-[#FED7AD] rounded-lg hover:text-pink-700 font-medium hover:font-semibold">
+                        <a href="#myProjects">My Projects</a>
+                    </li>
+                    <li onclick="blogs()" id="blog"
+                        class="text-lg hover:bg-[#FED7AD] rounded-lg hover:text-pink-700 font-medium hover:font-semibold">
+                        <a href="#blogs">Blogs</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar-end">
 
                 <div>
-                    <a target="blank" href="https://web.whatsapp.com/"
-                        class="btn hidden lg:flex btn-md roboto-slab-title text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-none bg-[#ffbd77] text-pink-700 font-semibold">Contact
+                    <a target="blank" href="https://wa.me/8801312590698?text=Hello,%20I%20want%20to%20contact%20you!"
+                        class="btn hidden lg:flex btn-md roboto-slab-title text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-2 border-[#eb9f4f] bg-[#ffbd77] text-pink-700 font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <i class=" text-xl fa-brands fa-whatsapp"></i> Contact
                         Me</a>
                 </div>
 
@@ -78,22 +116,28 @@
                         <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                             <!-- Sidebar content here -->
 
-                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                                <a>Home</a>
+                            <li
+                                class="text-xl rounded-lg hover:bg-[#FED7AD]  hover:text-pink-700 font-medium hover:font-semibold">
+                                <a href="#home">Home</a>
                             </li>
-                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                                <a>About
-                                    Me</a></li>
-                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                                <a>Skills</a>
+                            <li
+                                class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a href="#skills">Skills</a>
                             </li>
-                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
-                                <a>Blogs</a>
+                            <li
+                                class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a href="#myProjects">My Projects</a>
+                            </li>
+                            <li
+                                class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a href="#blogs">Blogs</a>
                             </li>
                             <li class="flex items-center justify-center mt-8">
-                                <a href="https://web.whatsapp.com/"
-                                class="btn btn-sm w-40 roboto-slab-title text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-none bg-[#ffbd77] text-pink-700 font-semibold">Contact
-                                Me</a>
+                                <a target="blank"
+                                    href="https://wa.me/8801312590698?text=Hello,%20I%20want%20to%20contact%20you!"
+                                    class="btn btn-sm w-40 roboto-slab-title text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-2 border-[#eb9f4f] bg-[#ffbd77] text-pink-700 font-semibold hover:scale-105 transition-transform duration-300 ease-in-out"><i
+                                        class=" text-xl fa-brands fa-whatsapp"></i> Contact
+                                    Me</a>
                             </li>
 
                         </ul>
@@ -104,13 +148,226 @@
         </div>
 
         <!-- Banner -->
-        <div>
+        <div class="lg:flex flex-row-reverse items-center justify-between lg:mt-20">
+
             <div>
-                <img class="" src="./assets/kkk.png" alt="">
+                <img class="w-[1100px] mt-16 lg:mt-2 mb-10" src="./assets/1000062771-removebg.png" alt="">
             </div>
-            <div></div>
+
+            <div class="space-y-4 animate-slide-in-left">
+                <h2 class="text-4xl lg:text-5xl font-bold roboto-slab-title ">Hey I'm <span
+                        class="text-cyan-500">Sudipto Das</span></h2>
+                <h1 class="text-3xl font-bold roboto-slab-title">I'm a <span class="text-emerald-500">Web
+                        Developer</span></h1>
+                <p class="text-black ">Hi, I'm <span class="text-rose-700 font-semibold">Sudipto Das</span>, a
+                    passionate Student with expertise in Web Developing. I specialize in <span
+                        class="text-sky-400 font-semibold">React</span>,
+                    creating innovative and high-quality solutions. With a strong background in <span
+                        class="text-sky-400 font-semibold">React.js</span> and <span
+                        class="text-yellow-600 font-semibold">javaScript</span>
+                    , I love turning ideas into reality. Explore my portfolio to see my latest projects and feel free to
+                    connect!</p>
+                <div>
+                    <!-- The button to open modal -->
+                    <label for="my_modal_6" class=""><a
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-40 text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-2 border-[#eb9f4f] bg-[#ffbd77] text-pink-700 font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <i class=" text-xl fa-solid fa-download"></i> Download CV</a></label>
+
+
+                    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+                    <div class="modal" role="dialog">
+                        <div class="modal-box bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                            <p class="text-center mb-5"><i
+                                    class="text-[80px] text-white fa-solid fa-triangle-exclamation"></i></p>
+                            <h3 class="text-3xl text-center font-bold text-white">CV has not been added yet!</h3>
+
+                            <div class="modal-action">
+                                <label for="my_modal_6" class="btn">Close!</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
         </div>
     </header>
+
+    <main class="mt-10 lg:mt-20 mb-20 px-4">
+
+        <!-- Skills -->
+        <section id="skills" class="container mx-auto">
+            <h1 class="text-center text-4xl roboto-slab-title font-bold">My Skills</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-14">
+
+                <div class="hero h-60 rounded-xl" style="background-image: url(./assets/html.jpg);">
+                    <div class="hero-overlay rounded-xl bg-opacity-60"></div>
+                    <div class="hero-content text-neutral-content text-center">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold roboto-slab-title text-orange-400 shadow-text">98%</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero h-60 rounded-xl" style="background-image: url(./assets/css.jpg);">
+                    <div class="hero-overlay rounded-xl bg-opacity-60"></div>
+                    <div class="hero-content text-neutral-content text-center">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold text text-sky-400 shadow-text">93%</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero h-60 rounded-xl" style="background-image: url(./assets/js.jpg);">
+                    <div class="hero-overlay rounded-xl bg-opacity-60"></div>
+                    <div class="hero-content text-neutral-content text-center">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold text-yellow-400 shadow-text">51%</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero h-60 rounded-xl" style="background-image: url(./assets/tailwind.jpg);">
+                    <div class="hero-overlay rounded-xl bg-opacity-60"></div>
+                    <div class="hero-content text-neutral-content text-center">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold text-cyan-400 shadow-text">75%</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero h-60 rounded-xl" style="background-image: url(./assets/daisyui.webp);">
+                    <div class="hero-overlay rounded-xl bg-opacity-60"></div>
+                    <div class="hero-content text-neutral-content text-center">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold text-green-400 shadow-text">89%</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero h-60 rounded-xl" style="background-image: url(./assets/react.png);">
+                    <div class="hero-overlay rounded-xl bg-opacity-60"></div>
+                    <div class="hero-content text-neutral-content text-center ">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold shadow-text">Learning...</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- My Projects -->
+        <section id="myProjects" class="container mx-auto mt-20">
+            <h2 class="text-center text-4xl roboto-slab-title font-bold">Explore My Projects</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-14">
+
+                <div class="card card-compact bg-rose-500 p-4 ">
+
+                    <img class="rounded-xl" src="./assets/english-explor.png" alt="" />
+
+                    <div class="mt-2">
+                        <p class="text-white">The website is built with HTML, CSS Famework, javaScript and is a mobile
+                            responsive website.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a target="blank" href="https://english-word-guidlines.netlify.app/"
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-28 text-base hover:bg-violet-600 hover:text-white border-none  bg-cyan-400 text-black font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card card-compact bg-rose-500 p-4">
+
+                    <img class="rounded-xl" src="./assets/devboard.png" alt="" />
+
+                    <div class="mt-2">
+                        <p class="text-white">The website is built with HTML, CSS Famework, javascript and is a mobile
+                            responsive website.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a target="blank" href="https://dev-board-task.netlify.app/"
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-28 text-base hover:bg-violet-600 hover:text-white border-none  bg-cyan-400 text-black font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card card-compact bg-rose-500 p-4 ">
+
+                    <img class="rounded-xl" src="./assets/pet-store.png" alt="" />
+
+                    <div class="mt-2">
+                        <p class="text-white">The website is built with HTML, CSS Famework and is a mobile responsive
+                            website.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a target="blank" href="https://pet-site-store.netlify.app/"
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-28 text-base hover:bg-violet-600 hover:text-white border-none  bg-cyan-400 text-black font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card card-compact bg-rose-500 p-4 ">
+
+                    <img class="rounded-xl" src="./assets/school-site.png" alt="" />
+
+                    <div class="mt-2">
+                        <p class="text-white">The website is built with HTML, CSS and is a mobile responsive
+                            website.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a target="blank" href="https://school-controling.netlify.app/"
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-28 text-base hover:bg-violet-600 hover:text-white border-none  bg-cyan-400 text-black font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card card-compact bg-rose-500 p-4 ">
+
+                    <img class="rounded-xl" src="./assets/winter-fashion.png" alt="" />
+
+                    <div class="mt-2">
+                        <p class="text-white">The website is built with HTML, CSS Famework and is a mobile responsive
+                            website.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a target="blank" href="https://fashion-store-winter.netlify.app/"
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-28 text-base hover:bg-violet-600 hover:text-white border-none  bg-cyan-400 text-black font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card card-compact bg-rose-500 p-4 ">
+
+                    <img class="rounded-xl" src="./assets/bd-2.0.png" alt="" />
+
+                    <div class="mt-2">
+                        <p class="text-white">The website is built with HTML, CSS and is not a mobile responsive
+                            website.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a target="blank" href="https://bangladesh-v2.netlify.app/"
+                            class="btn hidden lg:flex btn-md roboto-slab-title w-28 text-base hover:bg-violet-600 hover:text-white border-none  bg-cyan-400 text-black font-semibold hover:scale-105 transition-transform duration-300 ease-in-out">Explore</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- Blogs -->
+        <section id="blogs" class="">
+
+        </section>
+    </main>
+
+    <footer class="footer footer-center bg-orange-300 text-base-content p-4">
+        <aside>
+            <p class="text-base font-bold text-pink-600">Copyright © 2025 - All right reserved by Sudipto Das</p>
+        </aside>
+    </footer>
 
     <script src="./script/script.js"></script>
 </body>
