@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6dfd7984e0.js" crossorigin="anonymous"></script>
+
+
+
+    <style>
+        .winky-sans {
+            font-family: "Winky Sans", sans-serif;
+        }
+
+        .roboto-slab-title {
+            font-family: "Roboto Slab", serif;
+        }
+    </style>
+</head>
+
+<body class="winky-sans px-4 bg-gradient-to-r from-[#dfd6d6] to-[#FED7AD]">
+    <header class="container mx-auto ">
+        <!-- Navbar -->
+        <div class="navbar ">
+            <div class="navbar-start">
+
+                <a class="roboto-slab-title font-bold text-2xl lg:text-3xl ">Sudipto Das</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal space-x-12 px-1">
+                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                        <a>Home</a>
+                    </li>
+                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold"><a>About
+                            Me</a></li>
+                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                        <a>Skills</a>
+                    </li>
+                    <li class="text-xl hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                        <a>Blogs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+
+                <div>
+                    <a target="blank" href="https://web.whatsapp.com/"
+                        class="btn hidden lg:flex btn-md roboto-slab-title text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-none bg-[#ffbd77] text-pink-700 font-semibold">Contact
+                        Me</a>
+                </div>
+
+                <div class="lg:hidden drawer drawer-end flex justify-end">
+                    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content">
+                        <!-- Page content here -->
+                        <label for="my-drawer-4" class="drawer-button text-2xl font-bold "><i
+                                class="fa-solid fa-bars"></i></label>
+                    </div>
+                    <div class="drawer-side">
+                        <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                            <!-- Sidebar content here -->
+
+                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a>Home</a>
+                            </li>
+                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a>About
+                                    Me</a></li>
+                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a>Skills</a>
+                            </li>
+                            <li class="text-xl rounded-lg hover:bg-[#FED7AD] hover:text-pink-700 font-medium hover:font-semibold">
+                                <a>Blogs</a>
+                            </li>
+                            <li class="flex items-center justify-center mt-8">
+                                <a href="https://www.facebook.com/profile.php?id=100094053365815"
+                                class="btn btn-sm w-40 roboto-slab-title text-sm hover:bg-pink-700 hover:text-[#ffbd77] border-none bg-[#ffbd77] text-pink-700 font-semibold">Contact
+                                Me</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Banner -->
+        <div>
+            <div>
+                <img class="" src="./assets/kkk.png" alt="">
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
